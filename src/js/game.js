@@ -1,8 +1,6 @@
 
 export default class Game {
-    constructor(cell){
-
+    constructor(card){
+        this.card = card;
     }
-
-
 }
