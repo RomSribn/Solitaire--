@@ -1,6 +1,4 @@
-/* Thanks to
-   @donpark on GitHub Scalable CSS Playing Cards
-   https://donpark.github.io/scalable-css-playing-cards/ */
+/* Thanks to https://donpark.github.io/scalable-css-playing-cards/ */
 
 @font-face {
     font-family: 'Suit-Regular';
@@ -448,10 +446,13 @@ body {
 .waste {
     z-index: 1;
 }
-
+.fnd{
+    margin-top: auto;
+    margin-right: 1.1%;
+}
 /* foundation */
 .fnd .pile {
-    left: 43.5%;
+    left: 41.5%;
 }
 .fnd .pile::before {
     content: '';

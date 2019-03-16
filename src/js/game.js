@@ -4,6 +4,7 @@ export default class Game{
         this.upperRow = upperRow;
         this.lowerRow = lowerRow;
         this.suits;
+        this.clickedCard;
         this.wasteSuits = [];
         this.upperRow.stockCard.forEach(card => card.addEventListener('click', this.handleStockClick.bind(this)))
 
@@ -26,17 +27,18 @@ export default class Game{
         // console.log(ev.target);
         if(!this.upperRow.stockSuits.length){
             this.upperRow.stockSuits = this.wasteSuits;
-            this.upperRow.wasteSuits = [];
+            this.wasteSuits = [];
             // this.stockSuits.forEach(card => this.$stockPile.insertBefore(card, ))
             for(let i = 0; i < this.upperRow.stockSuits.length; i += 1){
                 this.upperRow.$stockPile.prepend(this.upperRow.stockSuits[i])
             }
             return
         }
-        const clickedCard = this.upperRow.stockSuits.pop();
-        this.wasteSuits.unshift(clickedCard);
+        this.clickedCard = this.upperRow.stockSuits.pop();
+        this.wasteSuits.unshift(this.clickedCard);
         // console.log(this.wasteSuits);
-        this.upperRow.$wastePile.prepend(clickedCard);
+        this.upperRow.$wastePile.prepend(this.clickedCard);
         this.wasteSuits[0].classList.add('up');
+        console.log(this.wasteSuits);
     }
 }

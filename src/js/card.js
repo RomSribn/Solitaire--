@@ -77,21 +77,6 @@ export default class Card {
     }
 
     createCard(cardSetting){
-    //     (<li class="card" data-rank="3" data-suit="diamond" data-pile="stock" data-selected="false">
-    //         <div class="three diamond">
-    //                 <div class="corner top">
-    //                     <span class="rank">3</span>
-    //                     <span class="suit"></span>
-    //                 </div>
-    //             <span class="suit top_center"></span>
-    //             <span class="suit middle_center"></span>
-    //             <span class="suit bottom_center"></span>
-    //                 <div class="corner bottom">
-    //                     <span class="rank">3</span>
-    //                     <span class="suit"></span>
-    //                 </div>
-    //         </div>
-    // </li>)
         const $li = document.createElement('li');
             $li.classList.add('card');
             $li.setAttribute('data-selected', 'false');
@@ -118,12 +103,21 @@ export default class Card {
                         const $spanCornerBottom2 = document.createElement('span');
                             $spanCornerBottom2.classList.add('suit');
 
+
         const $spanMain1 = document.createElement('span');
-        $spanMain1.classList.add('suit', 'top_center');
         const $spanMain2 = document.createElement('span');
-        $spanMain2.classList.add('suit', 'middle_center');
         const $spanMain3 = document.createElement('span');
-        $spanMain3.classList.add('suit', 'bottom_center');
+        // console.log(Number.isNaN(+cardSetting.number);
+        if(!Number.isNaN(+cardSetting.number) || (cardSetting.number === 'A')){
+            $spanMain1.classList.add('suit', 'top_center');
+            $spanMain2.classList.add('suit', 'middle_center');
+            $spanMain3.classList.add('suit', 'bottom_center');
+
+        }else{
+            $spanMain2.classList.add('face', 'middle_center');
+        }
+
+
 
 
 
