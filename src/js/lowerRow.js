@@ -16,7 +16,7 @@ export default class LowerRow{
         return $li
     }
     createGameCardsList(arrayOfSetting){
-        console.log(arrayOfSetting);
+        // console.log(arrayOfSetting);
         let $cardsArray = [];
         arrayOfSetting.forEach(oneSet => {
             $cardsArray.push(this.card.createCard(oneSet));
@@ -26,15 +26,28 @@ export default class LowerRow{
 
     fullFillGamePiles(CardsArray, DOMelement){
         this.gameSuits = CardsArray;
-        const pilesArr = [];
+        // console.log(CardsArray);
+        let pilesArr = [];
+        let ulArray = [];
         for(let i = 0; i < 7; i += 1){
             const $ul = document.createElement('ul');
+            const onePileArray = CardsArray.splice(0, i+1);
+            onePileArray[onePileArray.length -1].classList.add('up');
             // console.log(CardsArray.slice(i, i+1));
             // console.log(CardsArray.slice(0, 2));
-            CardsArray.slice(i, i+1).forEach(el => $ul.appendChild(el));
-            pilesArr.push(this.createLowerPileList(i).appendChild($ul))
+            // console.log(this.gameSuits.splice(0, 1));
+            onePileArray.forEach(el => $ul.appendChild(el));
+            // for(let i = 0; i < onePileArray.length; i += 1){
+            //     onePileArray[onePileArray.length -1]
+            // }
+            this.createLowerPileList(i).appendChild($ul);
+            pilesArr.push(this.createLowerPileList(i));
+            ulArray.push($ul);
         }
-        console.log(pilesArr);
-        pilesArr.forEach(pile => DOMelement.appendChild(pile));
+        for(let i = 0; i < 7; i += 1){
+            pilesArr[i].appendChild(ulArray[i]);
+            DOMelement.appendChild(pilesArr[i]);
+        }
+
     }
 }

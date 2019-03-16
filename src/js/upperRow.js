@@ -10,7 +10,7 @@ export default class UpperRow {
     }
 
     createStockCardsList(arrayOfSetting){
-        console.log(arrayOfSetting);
+        // console.log(arrayOfSetting);
         let $cardsArray = [];
         arrayOfSetting.forEach(oneSet => {
             $cardsArray.push(this.card.createCard(oneSet));
