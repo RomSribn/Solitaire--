@@ -1,10 +1,11 @@
-**15 Game**
+**Solitaire classic**
 #
 ###### **Demo**
-https://romsribn.github.io/15Game-team-intern/
+
 #
 ###### Technologies
 * ES6
+* ES6 drag&drop
 * ES6 classes
 * ES6 modules
 * Webpack
