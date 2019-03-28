@@ -87,8 +87,8 @@ body {
     background-image: url('https://bfa.github.io/solitaire-js/img/card_back_bg.png');
     background-size: contain;
     background-repeat: no-repeat;
-    width: 85%;
-    height: 100%;
+    width: 131px;
+    height: 180px;
     font-family: 'Suit-Regular', sans-serif;
     font-size: 0.6vw;
     border-radius: 5px;

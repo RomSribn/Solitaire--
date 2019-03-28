@@ -3,6 +3,7 @@ export default class Card {
     constructor(){
         // this.$card = document.querySelectorAll("#");
         // document.addEventListener("mousedown", this.handleMouseMoce.bind(this));
+        this.selectedCard = [];
     }
 
     generateCard(){
@@ -138,4 +139,7 @@ export default class Card {
         return $li;
     }
 
+    selectCards(e){
+
+    }
 }
