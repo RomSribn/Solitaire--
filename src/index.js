@@ -8,4 +8,3 @@ import Game from './js/game.js'
 new Game(new Card(), new UpperRow(new Card()), new LowerRow(new Card())).start();
 
 
-
